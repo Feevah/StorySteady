@@ -1,10 +1,10 @@
-#My Story Squeeze
+# Story Steady
 
-##My Story Squeeze is an idea that people might want to connect with someone else at a deeper level than that of just quick posts and pictures.
+## Story Steady is an idea that people might want to connect with someone else at a deeper level than that of just quick posts and pictures.
 
-##That's where __Story Squeeze__ comes into play.
+## That's where __Story Steady__ comes into play.
 
-###My idea for __Story Squeeze__ is as follows:
+### My idea for __Story Steady__ is as follows:
 
 * Register as a user through Facebook or possibly another dating website.
 * Search for others using geographic locators (It can be romantic, friendly or a way of practicing another language and meeting someone from abroad).

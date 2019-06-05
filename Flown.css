@@ -1,7 +1,9 @@
 body {background-color: rgb(28, 82, 168)};
 
-h1 {color: (white)};
+.title {color: green;}
 
-/* this could change in the future */
 
-ul {font: white};
+ul {color: white;}
+
+div {font-size: 20px
+	 color:red;}

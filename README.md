@@ -12,5 +12,5 @@
 * Choose a story mode  (Thoughtful or Quick mode)
 * Read past stories from users, who can opt to stay anonymous until you invite them to be friends.
 
-Format: ![Alt Text](https://images.pexels.com/photos/256546/pexels-photo-256546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+![Alt Text](https://images.pexels.com/photos/256546/pexels-photo-256546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
 

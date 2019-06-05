@@ -1,9 +1,10 @@
 body {background-color: rgb(28, 82, 168);}
 
-.title {color: green;}
+.title {font-size: 50px;
+	color: green;}
 
 
 ul {color: white;}
 
-div {font-size: 50px;
+div {font-size: 30px;
 	 color:red;}

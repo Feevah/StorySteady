@@ -5,31 +5,30 @@ window.onload = function(){
 	var userText =  document.querySelector(".userText");
 	var submit =  document.querySelector(".submit");
 	var newOne =  document.querySelector(".newOne");
-	var first = document.querySelector(".first")
-	var second = document.querySelector(".second")
-	var third = document.querySelector(".third")
-
+	var newStory = document.querySelector(".newStory")
 	
 
 
 
-    	var newDoDo = ["Build App", "Boogie",]
+    	// var newStory = ["Build App", "Boogie",]
 
 	
 	submit.addEventListener("click", function(anEvent){
 
-		
-
-		var userItem = document.createElement("textarea")
-
-		var newDoDo = userText.value
-
 		userText.value = ""
 
-		for (i=0; i<20; i++) {
-			if 
-			newOne.appendChild(userItem);
-		}
+		var userItem = document.createElement("p");
+		// var newStory = userText.value;
+		var write = document.createTextNode(newStory);
+		newStory.innerHTML = userText.value;
+		userItem.appendChild(newStory);
+
+		
+
+		// for (i=0; i<20; i++) {
+		// 	if 
+		// 	newOne.appendChild(userItem);
+		});
 
 		
         // var listItems = [first, second, third] 
@@ -43,7 +42,7 @@ window.onload = function(){
    //       	};
 
 
-		});
+	};
 
 
 
@@ -71,8 +70,3 @@ window.onload = function(){
 
 		
 // }
-
-
-		
-
-}

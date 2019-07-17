@@ -38,6 +38,18 @@
 	
 <h2>Ready to write?</h2>
 
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+var para = document.createElement("p");
+var node = document.createTextNode("This is new.");
+para.appendChild(node);
+var element = document.getElementById("div1");
+element.appendChild(para);
+</script>
+
 <ol>
 	<li>
 		<h3>Check out one of our 2 story-writing modes</h3>
@@ -55,10 +67,13 @@
 	<li>
 		<h1>Begin your Story</h1>
 
-		<div class="input">
+		<div class="input" class="userText">
 		<textarea class="userText" rows="5" cols="80" id="TITLE"></textarea>
 		<button type="button" class="submit">Begin</button>
 		</div>
+
+		<div id="div1">
+
 
 		<p class="newStory"><h2>********This is where your Story will go************<h2></p>
 

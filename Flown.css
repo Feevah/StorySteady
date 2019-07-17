@@ -6,7 +6,11 @@ body {background-color: rgb(28, 82, 168);}
 
 ul {color: white;}
 
-div {font-size: 30px;
-	 color:red;}
+div {font-size: 30px;}
 
 #name {color: grey;}
+
+.space {
+	margin-bottom: 100px;
+	margin-top: 40px;
+}

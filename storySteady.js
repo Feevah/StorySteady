@@ -1,5 +1,7 @@
 console.log ("hello world")
 
+
+
 window.onload = function(){
 	var input =  document.querySelector(".input");
 	var userText =  document.querySelector(".userText");
@@ -27,3 +29,5 @@ window.onload = function(){
 		});
 
 	};
+
+	module.exports.newDoDo = newDoDo

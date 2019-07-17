@@ -10,9 +10,10 @@ window.onload = function(){
 	
 	submit.addEventListener("click", function(anEvent){
 
-		var userItem = document.createElement("p");
 
-		document.getElementById('added').textContent = userItem;
+
+
+		var userItem = document.createElement("p");
 
 		var newDoDo = userText.value;
 

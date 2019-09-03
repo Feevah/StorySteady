@@ -1,5 +1,8 @@
 # Story Steady
 
+[Check it out Live](https://fierce-thicket-10149.herokuapp.com)
+
+
 ## Story Steady is an idea that people might want to connect with someone else at a deeper level than that of just quick posts and pictures.
 
 ## That's where __Story Steady__ comes into play.

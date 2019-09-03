@@ -1,70 +1,64 @@
+const path = require('path')
+const express = require("express");
+const db = require("./db.js");
+const bodyParser = require("body-parser");
+const PORT = process.env.PORT || 5000
 
-// Shoes Serever
+const app = express();
+// const publicDirectory = path.join(__dirname, '../public')
 
-
-var http = require("http");
-var url = require('url');
-var fs = require("fs");
-const { parse } = require('querystring');
-var path = require('path');
-
-const server = http.createServer(function (req, res) {
-
-		var parUrl = url.parse(req.url, true);
-		var filePath = '.' + parUrl.pathname;
-
-
-		console.log(parUrl);
-
-// GET and POST
+app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(express.static(__dirname + "/public"));
+// app.use(express.static(publicDirectory));
 
 
-		if (req.method === 'POST') {
+app.get('/', (req, res) =>{
+  db.getCaughtData()
+  .then(result => {
+    var newArr = [];
+    result.forEach(function(obj) {
+      newArr.push(obj.posts);
+    })
+  res.render("home", {data: newArr})})
+  .catch(error => res.send("we broke at part 2"));
+})
 
-
-    		var story = '';
-    		req.on('data', chunk => {
-        		story += chunk.toString();
-    		});
-    		req.on('end', () => {
-        		fs.appendFileSync('story.txt', story)
-        		console.log(
-            	parse(story)
-        		);
-        		res.end('ok');
-    		});
-		}
-
-
-
-// Serving pages
-
-		if(parUrl.pathname === ('/')){
-			fs.readFile("index.html", function (err, content) {
-			res.writeHead(200, { 'Content-Type': "text/html" });
-			return res.end(content);
-		});
-		}
-
-	   else if (parUrl.pathname === ('/Flown.css')){
-		fs.readFile("Flown.css", function(err, content){
-			res.writeHead(200, {'content-Type': "text/css"});
-			res.end(content);
-		});
-	    }
-
-	    else if (parUrl.pathname === ('/storySteady.js')){
-	    fs.readFile("storySteady.js", function(err, content){
-	    	res.writeHead(200, {'content-Type': "application/javascript"});
-	    	return res.end(content);
-	    });
-	    }
+app.post('/new', (req, res) =>{
+var newStory = req.body.story
+ db.insertCaughtData(newStory)
+        .then(result => {res.redirect("/")})
+        .catch(error => res.send("We broke"));
+})
 
 
 
 
-	
-	})
-	server.listen(8080, function () {
-			console.log("Listening on Port: "+ 8080);
-		});
+// Delete database at url /storiesPast
+
+
+// app.get('/storiesPast', (req, res) => {
+//   db.getCaughtData()
+//   .then(result => {
+//     var newArr = [];
+//     result.forEach(function(obj) {
+//       newArr.push(obj.posts);
+//     })
+
+//     res.send(newArr)})
+//   .catch(error => res.send("we broke at part 2"));    
+// });
+
+
+
+
+	// 404
+app.get('*', (req, res) => {
+    res.send("Sorry, the page you requested does not exist.")
+})
+
+
+
+app.listen(PORT, () => {
+	console.log(`Listening on ${ PORT }`)
+}) 
